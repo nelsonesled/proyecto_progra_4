@@ -142,7 +142,13 @@ public class Ajedrez {
     }
     public void mostrar(int posx,int posy){// este es un cambio 
         // se toma como base el ya hecho en tablero y se modifica
+        //char ficha=tablero.getCasilla(posy, posx), new Peon(Color.BLANCO)
+        Ficha fich;
+        
+        Casilla ficha=tablero.getCasilla(posy, posx);
+        System.out.println(ficha); 
         asociarFichaTablero(tablero.getCasilla(posy, posx), new Peon(Color.BLANCO));// este es un cambio hay que generalizar
+        tablero.cambiar(posy, posx, ficha);
         int x=0;
         int y=0;
         while (y<8){

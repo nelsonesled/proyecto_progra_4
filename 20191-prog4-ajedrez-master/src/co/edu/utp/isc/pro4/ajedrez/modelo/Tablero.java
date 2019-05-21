@@ -11,7 +11,7 @@ package co.edu.utp.isc.pro4.ajedrez.modelo;
  */
 public class Tablero {
 
-    private final Casilla[][] casillas;
+    private  Casilla[][] casillas;
 
     public Tablero() {
         casillas = new Casilla[8][];
@@ -24,12 +24,19 @@ public class Tablero {
     }
 
     public Casilla getCasilla(int fila, int columna) {
+        
         return casillas[fila][columna];
     }
 
     public void cambiar(int posx,int posy,Casilla ficha){
-        casillas[posy][posx] = ficha; 
+        Casilla ca=new Casilla(Color.BLANCO,posy,(char)posx);
+        casillas[posx][posy]=ca;
+        
     }
+    
+   /* public void sacar(int posx, int posy){
+        char ficha =(char) casillas[posy,posx];
+    }*/
     
     public Casilla getCasilla(String posicion) {
         int columna = posicion.charAt(0) - 'A';

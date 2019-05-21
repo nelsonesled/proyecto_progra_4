@@ -20,6 +20,8 @@ public class Peon extends Ficha {
         super(color);
     }
 
+
+
     @Override
     public void mover() {
         //TODO: Mover como peon
